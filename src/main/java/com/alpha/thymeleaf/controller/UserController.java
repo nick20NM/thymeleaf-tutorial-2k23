@@ -41,4 +41,11 @@ public class UserController {
 		model.addAttribute("id", 100);
 		return "link-expression";
 	}
+	
+	// handler method to handle /fragment-expression request
+	// http://localhost:8080/fragment-expression
+	@GetMapping("/fragment-expression")
+	public String fragmentExpression() {
+		return "fragment-expression";
+	}
 }
