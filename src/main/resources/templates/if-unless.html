@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>if unless attributes</title>
+  </head>
+  <body>
+  	<table border="2">
+  	 <thead>
+  	 	<tr>
+  	 		<th>Id</th>
+  	 		<th>Name</th>
+  	 		<th>Email</th>
+  	 		<th>Role</th>
+  	 		<th>Actions</th>
+  	 	</tr>
+  	 </thead>
+  	 <tbody>
+  	 	<tr th:each = "user : ${users}">
+  	 		<td th:text="${user.id}"></td>
+  	 		<td th:text="${user.name}"></td>
+  	 		<td th:text="${user.email}"></td>
+  	 		<td th:text="${user.role}"></td>
+  	 		<td>
+  	 			<a th:href="@{/update}" th:if="${user.role} == 'ADMIN' ">update</a>
+  	 			<a th:href="@{/delete}" th:if="${user.role} == 'ADMIN' ">delete</a>
+  	 			<a th:href="@{/view}" th:unless="${user.role} == 'ADMIN' ">view</a>
+  	 		</td>
+  	 	</tr>
+  	 </tbody>
+  	</table>
+  </body>
+</html>

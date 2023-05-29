@@ -70,4 +70,23 @@ public class UserController {
 		model.addAttribute("users", users);
 		return "users";
 	}
+	
+	// handler method to handle /if-unless request
+	// http://localhost:8080/if-unless
+	@GetMapping("/if-unless")
+	public String ifUnless(Model model) {
+		User admin = new User(1, "admin", "admin@gmail.com", "ADMIN", "male"); 
+		User tom = new User(2, "tom", "tom@gmail.com", "NORMAL", "male"); 
+		User dolly = new User(3, "dolly", "dolly@gmail.com", "NORMAL", "female"); 
+		User molly = new User(4, "molly", "molly@gmail.com", "NORMAL", "female");
+		
+		List<User> users = new ArrayList<>();
+		users.add(admin);
+		users.add(tom);
+		users.add(dolly);
+		users.add(molly);
+		
+		model.addAttribute("users", users);
+		return "if-unless";
+	}
 }
