@@ -22,7 +22,7 @@ public class UserController {
 	// http://localhost:8080/selection-expression
 	@GetMapping("/selection-expression")
 	public String selectionExpression(Model model) {
-		User user = new User(1, "tom", "tom@gmail.com", "ADMIN", "male");
+		User user = new User(2, "jerry", "jerry@gmail.com", "ADMIN", "male");
 		model.addAttribute("user", user);
 		return "selection-expression";
 	}
@@ -32,5 +32,13 @@ public class UserController {
 	@GetMapping("/message-expression")
 	public String messageExpression() {
 		return "message-expression";
+	}
+	
+	// handler method to handle /link-expression request
+	// http://localhost:8080/link-expression
+	@GetMapping("/link-expression")
+	public String linkExpression(Model model) {
+		model.addAttribute("id", 100);
+		return "link-expression";
 	}
 }
