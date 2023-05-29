@@ -89,4 +89,15 @@ public class UserController {
 		model.addAttribute("users", users);
 		return "if-unless";
 	}
+	
+	// handler method to handle /switch-case request
+	// http://localhost:8080//switch-case
+	@GetMapping("/switch-case")
+	public String switchCase(Model model) {
+//		User user = new User(1, "tom", "tom@gmail.com", "ADMIN", "male"); 
+//		User user = new User(1, "tom", "tom@gmail.com", "NORMAL", "male"); 
+		User user = new User(1, "tom", "tom@gmail.com", "GUEST", "male"); 
+		model.addAttribute("user", user);
+		return "switch-case";
+	}
 }
