@@ -55,7 +55,7 @@
 	  		
 	  		<label>profession:</label>
 	  		<select th:field="*{profession}">
-	  			<option th:each="p : ${professionList}" value="${p}" th:text="${p}"></option>
+	  			<option th:each="p : ${professionList}" th:value="${p}" th:text="${p}"></option>
 	  		</select>
 	  		<br>
 	  		

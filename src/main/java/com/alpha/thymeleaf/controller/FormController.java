@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.alpha.thymeleaf.model.UserForm;
 
@@ -23,5 +25,13 @@ public class FormController {
 		model.addAttribute("professionList", professionList);
 		
 		return "register-form";
+	}
+	
+	// handler method to handle user registration form submission request
+	@PostMapping("/register/save")
+	public String submitForm(Model model, 
+			@ModelAttribute("userForm") UserForm userForm) {
+		model.addAttribute("userForm", userForm);
+		return "register-success";
 	}
 }
